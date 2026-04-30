@@ -15,10 +15,56 @@ const SERVICE_OPTIONS = [
 ];
 
 const VEHICLE_MAKES = [
-  'Acura','BMW','Chevrolet','Ford','Honda','Hyundai','Infiniti',
-  'Jeep','Kia','Lexus','Mazda','Mercedes-Benz','Mitsubishi',
-  'Nissan','Subaru','Suzuki','Toyota','Volkswagen','Other',
+  'Toyota',
+  'Honda',
+  'Nissan',
+  'Mitsubishi',
+  'Hyundai',
+  'Kia',
+  'Mazda',
+  'Suzuki',
+  'Isuzu',
+  'Other',
 ];
+
+const VEHICLE_MODELS: Record<string, string[]> = {
+  Toyota: [
+    'Axio', 'Fielder', 'Corolla', 'Allion', 'Premio', 'Camry',
+    'Mark X', 'Crown', 'Yaris / Vitz', 'IST', 'Wish', 'Noah', 'Voxy',
+    'Hilux', 'Land Cruiser Prado', 'Land Cruiser 200', 'Fortuner',
+    'RAV4', 'Rush', 'HiAce',
+  ],
+  Honda: [
+    'Fit / Jazz', 'Civic', 'City', 'Accord', 'Freed', 'Stream',
+    'Stepwgn', 'Airwave', 'CR-V', 'HR-V / Vezel', 'Odyssey',
+  ],
+  Nissan: [
+    'Tiida', 'Almera', 'Sylphy', 'March / Micra', 'Note', 'AD Van',
+    'Wingroad', 'Cube', 'X-Trail', 'Navara / Frontier', 'Pathfinder',
+  ],
+  Mitsubishi: [
+    'Lancer', 'Galant', 'Colt', 'Space Star', 'ASX',
+    'Outlander', 'Pajero', 'Pajero Sport', 'L200 / Triton',
+  ],
+  Hyundai: [
+    'Accent', 'Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Creta', 'i10', 'i20',
+  ],
+  Kia: [
+    'Picanto', 'Rio', 'Cerato / Forte', 'Stonic', 'Sportage', 'Sorento', 'Seltos',
+  ],
+  Mazda: [
+    'Demio / Mazda 2', 'Axela / Mazda 3', 'Atenza / Mazda 6',
+    'CX-3', 'CX-5', 'BT-50',
+  ],
+  Suzuki: [
+    'Alto', 'Swift', 'Cultus', 'Wagon R', 'SX4',
+    'Vitara', 'Grand Vitara', 'Jimny', 'APV',
+  ],
+  Isuzu: [
+    'D-Max', 'MU-X', 'Rodeo', 'Trooper',
+  ],
+  Other: [],
+};
 
 const CURRENT_YEAR = new Date().getFullYear();
 const YEARS = Array.from({ length: 30 }, (_, i) => CURRENT_YEAR - i);
@@ -225,7 +271,7 @@ function BookingForm() {
               <Field label="Make" required>
                 <select
                   value={form.vehicleMake}
-                  onChange={(e) => set('vehicleMake', e.target.value)}
+                  onChange={(e) => { set('vehicleMake', e.target.value); set('vehicleModel', ''); }}
                   required
                   className="form-input"
                 >
@@ -237,14 +283,29 @@ function BookingForm() {
               </Field>
 
               <Field label="Model" required>
-                <input
-                  type="text"
-                  value={form.vehicleModel}
-                  onChange={(e) => set('vehicleModel', e.target.value)}
-                  placeholder="e.g. Corolla, Civic"
-                  required
-                  className="form-input"
-                />
+                {form.vehicleMake && form.vehicleMake !== 'Other' ? (
+                  <select
+                    value={form.vehicleModel}
+                    onChange={(e) => set('vehicleModel', e.target.value)}
+                    required
+                    className="form-input"
+                  >
+                    <option value="">Select model</option>
+                    {VEHICLE_MODELS[form.vehicleMake]?.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                    <option value="Other">Other</option>
+                  </select>
+                ) : (
+                  <input
+                    type="text"
+                    value={form.vehicleModel}
+                    onChange={(e) => set('vehicleModel', e.target.value)}
+                    placeholder="Enter model"
+                    required
+                    className="form-input"
+                  />
+                )}
               </Field>
             </div>
           </div>
