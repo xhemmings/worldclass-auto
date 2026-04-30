@@ -1,9 +1,7 @@
 import { neon } from '@neondatabase/serverless';
 
 export function getDb() {
-  const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
-  if (!PGHOST || !PGDATABASE || !PGUSER || !PGPASSWORD) {
-    throw new Error('Missing Neon database environment variables');
-  }
-  return neon(`postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?sslmode=require`);
+  const url = process.env.DATABASE_URL;
+  if (!url) throw new Error('DATABASE_URL is not set');
+  return neon(url);
 }
