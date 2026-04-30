@@ -275,7 +275,7 @@ function BookingForm() {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => set('phone', e.target.value)}
-                  placeholder="(876) 555-0100"
+                  placeholder="(876) 462-9709"
                   required
                   className="form-input"
                 />

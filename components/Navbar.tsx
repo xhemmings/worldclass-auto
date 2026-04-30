@@ -52,11 +52,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+18761234567"
+            href="tel:+18764629709"
             className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${textColor}`}
           >
             <Phone size={14} />
-            (876) 123-4567
+            (876) 462-9709
           </a>
           <Link
             href="/booking"
@@ -90,11 +90,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+18761234567"
+            href="tel:+18764629709"
             className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary"
           >
             <Phone size={15} />
-            (876) 123-4567
+            (876) 462-9709
           </a>
           <Link
             href="/booking"

@@ -84,14 +84,14 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2.5">
               <Phone size={15} className="text-primary shrink-0" />
-              <a href="tel:+18761234567" className="hover:text-white transition-colors">
-                (876) 123-4567
+              <a href="tel:+18764629709" className="hover:text-white transition-colors">
+                (876) 462-9709
               </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail size={15} className="text-primary shrink-0" />
-              <a href="mailto:info@worldclassauto.com" className="hover:text-white transition-colors break-all">
-                info@worldclassauto.com
+              <a href="mailto:worldclassautorepairs1@gmail.com" className="hover:text-white transition-colors break-all">
+                worldclassautorepairs1@gmail.com
               </a>
             </li>
           </ul>

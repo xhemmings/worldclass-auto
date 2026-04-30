@@ -344,10 +344,10 @@ export default function HomePage() {
               Book a Service <ArrowRight size={17} />
             </Link>
             <a
-              href="tel:+18761234567"
+              href="tel:+18764629709"
               className="border-2 border-white/40 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
             >
-              Call (876) 123-4567
+              Call (876) 462-9709
             </a>
           </div>
         </div>
