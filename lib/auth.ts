@@ -35,4 +35,5 @@ export function verifyToken(token: string): string | null {
   } catch { return null; }
 }
 
-export const COOKIE_NAME = 'wca_admin_session';
+export const COOKIE_NAME      = 'wca_admin_session';
+export const TECH_COOKIE_NAME = 'wca_tech_session';
