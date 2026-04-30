@@ -6,13 +6,12 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, ArrowLeft, Calendar, Car, User, Wrench, Loader2 } from 'lucide-react';
 
 const SERVICE_OPTIONS = [
-  { value: 'oil-change', label: 'Oil Change & Fluids' },
-  { value: 'tires', label: 'Tire & Alignment' },
+  { value: 'servicing', label: 'General Servicing' },
+  { value: 'alignment', label: 'Wheel Alignment' },
   { value: 'diagnostics', label: 'Engine Diagnostics' },
-  { value: 'brakes', label: 'Brake Service' },
-  { value: 'ac', label: 'A/C & Heating' },
-  { value: 'inspection', label: 'Full Inspection' },
-  { value: 'repair', label: 'General Repair' },
+  { value: 'parts', label: 'Parts & Installation' },
+  { value: 'bodywork', label: 'Body Work' },
+  { value: 'spray', label: 'Spray & Paint' },
 ];
 
 const VEHICLE_MAKES = [

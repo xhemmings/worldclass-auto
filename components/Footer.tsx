@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const SERVICES = [
-  'Oil Change & Fluids',
-  'Tire & Alignment',
+  'General Servicing',
+  'Wheel Alignment',
   'Engine Diagnostics',
-  'Brake Service',
-  'A/C & Heating',
-  'Full Inspection',
+  'Parts & Installation',
+  'Body Work',
+  'Spray & Paint',
 ];
 
 const QUICK_LINKS = [

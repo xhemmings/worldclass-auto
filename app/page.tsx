@@ -1,39 +1,39 @@
 import Link from 'next/link';
 import {
-  Wrench, Disc, Gauge, Shield, Wind, CheckCircle,
-  Star, ArrowRight, Clock, Award, Users, ThumbsUp,
+  Wrench, Disc, Gauge, Package, Hammer, Palette,
+  CheckCircle, Star, ArrowRight, Clock, Award, Users, ThumbsUp,
 } from 'lucide-react';
 
 const SERVICES = [
   {
     icon: Wrench,
-    title: 'Oil Change & Fluids',
-    desc: 'Full synthetic, semi-synthetic, and conventional oil changes. Includes multi-point inspection and fluid top-up.',
+    title: 'General Servicing',
+    desc: 'Core maintenance, oil changes, fluid top-ups, parts installation, and all routine service work handled by certified technicians.',
   },
   {
     icon: Disc,
-    title: 'Tire & Alignment',
-    desc: 'Computer-controlled wheel alignment, balancing, rotation, and new tire installation for all makes.',
+    title: 'Wheel Alignment',
+    desc: 'High-volume computer-controlled alignment. Fast 30-minute jobs — approximately 22 alignments completed per day.',
   },
   {
     icon: Gauge,
     title: 'Engine Diagnostics',
-    desc: 'Advanced OBD-II scanning, check engine light analysis, and full engine performance assessment.',
+    desc: 'Advanced OBD-II scanning, check engine light analysis, and full engine performance assessment by certified technicians.',
   },
   {
-    icon: Shield,
-    title: 'Brake Service',
-    desc: 'Pad & rotor replacement, brake fluid flush, caliper service, and complete braking system inspection.',
+    icon: Package,
+    title: 'Parts & Installation',
+    desc: 'Genuine and premium aftermarket parts sourced and fitted same day. Our sales agent ensures the right part at the right price.',
   },
   {
-    icon: Wind,
-    title: 'A/C & Heating',
-    desc: 'Refrigerant recharge, compressor replacement, leak detection, and climate control system diagnostics.',
+    icon: Hammer,
+    title: 'Body Work',
+    desc: 'Structural and heavy-repair body work handled in our dedicated bays. From panel repairs to full collision restoration.',
   },
   {
-    icon: CheckCircle,
-    title: 'Full Inspection',
-    desc: '130-point vehicle health check covering all major systems. Receive a full digital report in real time.',
+    icon: Palette,
+    title: 'Spray & Paint',
+    desc: 'Professional cosmetic paint work and full respray services. Factory-matched finishes with lasting durability.',
   },
 ];
 
@@ -138,12 +138,12 @@ export default function HomePage() {
                 className="flex-1 border border-gray-200 rounded-xl px-4 py-3.5 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-white"
               >
                 <option value="">Select a Service</option>
-                <option value="oil-change">Oil Change &amp; Fluids</option>
-                <option value="tires">Tire &amp; Alignment</option>
+                <option value="servicing">General Servicing</option>
+                <option value="alignment">Wheel Alignment</option>
                 <option value="diagnostics">Engine Diagnostics</option>
-                <option value="brakes">Brake Service</option>
-                <option value="ac">A/C &amp; Heating</option>
-                <option value="inspection">Full Inspection</option>
+                <option value="parts">Parts &amp; Installation</option>
+                <option value="bodywork">Body Work</option>
+                <option value="spray">Spray &amp; Paint</option>
               </select>
               <input
                 type="date"
