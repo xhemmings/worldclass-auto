@@ -1,8 +1,6 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -16,9 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.className}>
       <body className="bg-white text-gray-900 antialiased">
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
