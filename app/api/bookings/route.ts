@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { sql } from '@/lib/db';
+import { getDb } from '@/lib/db';
 
 export async function POST(req: Request) {
   const data = await req.json();
@@ -20,6 +20,7 @@ export async function POST(req: Request) {
   }
 
   try {
+    const sql = getDb();
     await sql`INSERT INTO bookings (name, phone, email, vehicle_make, vehicle_model, service_type, preferred_date, description) VALUES (${data.name}, ${data.phone}, ${data.email}, ${data.vehicleMake}, ${data.vehicleModel}, ${data.serviceType}, ${data.preferredDate}, ${data.description})`;
     return NextResponse.json({ message: 'Booking created' }, { status: 201 });
   } catch (error) {
